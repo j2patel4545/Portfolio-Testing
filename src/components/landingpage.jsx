@@ -1,10 +1,28 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowUpLong } from 'react-icons/fa6';
 import locomotiveScroll from 'locomotive-scroll';
 
 function LandingPage() {
+  const [isMobile, setIsMobile] = useState(false);
   const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 630);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Set up event listener
+    window.addEventListener('resize', handleResize);
+
+    // Clean up
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const scroll = new locomotiveScroll({
@@ -21,6 +39,13 @@ function LandingPage() {
 
   return (
     <div ref={scrollRef} data-scroll data-scroll-section data-scroll-speed="-0.5" className="relative flex flex-col w-full h-screen pt-1">
+      {/* Message for small screens */}
+      {isMobile && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black text-white z-50">
+          <p className="text-lg md:text-xl p-4">This portfolio webpage is only suitable for desktop view</p>
+        </div>
+      )}
+
       {/* Text Structure */}
       <div className="textstructure mt-[16vh] px-5 md:px-20">
         {["Crafting", "Digital", "Experiences"].map((item, index) => (
@@ -53,23 +78,22 @@ function LandingPage() {
         </div>
 
         <div className="start flex items-center gap-5 mt-5 md:mt-0">
-        <div className="flex pl-4 pr-1 py-1 border-[1px] rounded-full items-center border-zinc-500 font-light text-xs md:text-sm capitalize">
-      LinkedIn
-      <motion.a
-        href="https://www.linkedin.com/in/j2keys/"
-        target="_blank"
-        rel="noopener noreferrer" // Added rel for security
-        className="flex w-8 h-8 border-[1px] ml-2 cursor-pointer justify-center items-center hover:bg-white hover:text-black border-zinc-500 rounded-full"
-        whileHover={{ scale: 1.2, rotate: 18 }}
-        whileTap={{ scale: 0.9 }}
-        transition={{ duration: 0.3 }}
-      >
-        <span className="flex rotate-[45deg]">
-          <FaArrowUpLong />
-        </span>
-      </motion.a>
-    </div>
-          
+          <div className="flex pl-4 pr-1 py-1 border-[1px] rounded-full items-center border-zinc-500 font-light text-xs md:text-sm capitalize">
+            LinkedIn
+            <motion.a
+              href="https://www.linkedin.com/in/j2keys/"
+              target="_blank"
+              rel="noopener noreferrer" // Added rel for security
+              className="flex w-8 h-8 border-[1px] ml-2 cursor-pointer justify-center items-center hover:bg-white hover:text-black border-zinc-500 rounded-full"
+              whileHover={{ scale: 1.2, rotate: 18 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ duration: 0.3 }}
+            >
+              <span className="flex rotate-[45deg]">
+                <FaArrowUpLong />
+              </span>
+            </motion.a>
+          </div>
         </div>
       </div>
     </div>
