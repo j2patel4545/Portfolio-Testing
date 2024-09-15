@@ -11,7 +11,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 import Headroom from 'react-headroom';
 import Contect from './components/Contect';
 import { motion } from 'framer-motion';
-import { FiMonitor } from 'react-icons/fi';
+import { FiMonitor } from 'react-icons/fi'; 
 
 // import 'locomotive-scroll/src/locomotive-scroll.css';
 
