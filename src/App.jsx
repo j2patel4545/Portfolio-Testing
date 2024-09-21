@@ -11,6 +11,8 @@ import LocomotiveScroll from 'locomotive-scroll';
 import Headroom from 'react-headroom';
 import { motion } from 'framer-motion';
 import { FiMonitor } from 'react-icons/fi';
+import Contect from './components/Contect';
+import Footer from './components/Footer'
 
 // import 'locomotive-scroll/src/locomotive-scroll.css';
 
@@ -97,6 +99,8 @@ function App() {
               <Eye />
               <Projects />
               <Skills />
+              <Contect/>
+              <Footer/>
             </>
           )}
         </>
