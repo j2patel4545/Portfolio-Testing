@@ -37,14 +37,14 @@ function About() {
       <div className='text-2xl -mt-16 justify-center flex text-zinc-500'>--Who We Are--</div>
       <div className='flex mt-7 w-full gap-2 h-[68vh] align-middle justify-evenly'>
         <div className='flex h-full w-2/8 align-middle justify-center'>
-          <img src="https://jetal-intro.vercel.app/doc's/profile.png" alt="Profile" className='j object-contain border-b-2 border-black h-full w-full' />
+          <img src="https://jetal-intro.vercel.app/doc's/profile.png" alt="Profile" className='-mt-16 object-contain border-b-2 border-black h-[80vh] w-full' />
         </div>
         <div className='flex-col mt-[27.5vh] h-full w-2/4'>
-          <h1 className='text-[2.vw] text-zinc-500 font-bold leading-10 pb-3'>
-            I'm Patel Jetal and I am a <span className='inline-block text-zinc-50'>{displayedText}</span>
+          <h1 className='text-5xl text-zinc-400 font-bold leading-10 pb-3'>
+            hy I am a <span className='inline-block text-zinc-50'>{displayedText}</span>
             <span className="inline-block blink-caret">|</span>
           </h1>
-          <p className='text-[1.8vw] text-zinc-400 leading-none font-light'>
+          <p className='text-3xl text-zinc-500 leading-none font-light'>
             Balancing code and keys, I navigate the digital realm as a web developer while harmonizing melodies on the piano. By day, crafting elegant websites; by night, embracing the symphony of chords and rhythms. Passion drives both worlds, intertwining creativity in technology and music, shaping a multifaceted journey.
           </p>
         </div>
