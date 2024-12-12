@@ -12,6 +12,7 @@ import Headroom from 'react-headroom';
 import { motion } from 'framer-motion';
 import { FiMonitor } from 'react-icons/fi';
 // import Contect from './components/Contect';
+import Contact from './components/Contact/Contact';
 import Footer from './components/Footer'
 
 // import 'locomotive-scroll/src/locomotive-scroll.css';
@@ -100,7 +101,9 @@ function App() {
               <Projects />
               <Skills />
               {/* <Contect/> */}
-              <Footer/>
+              <Contact/>
+                            <Footer/>
+
             </>
           )}
         </>
