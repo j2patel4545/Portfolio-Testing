@@ -2,17 +2,19 @@ import React from 'react';
 
 function Footer() {
     return (
-        <div className="flex justify-center items-center bg-white gap-4 py-8">
+        <div className="flex justify-between items-center bg-white gap-4 py-3">
             {/* Social button for Violet */}
-            <div class="flex items-center gap-4">
+            <div className=' text-black px-10 '>Copyright © 2024 
+                <a href="" className='ml-1'>Jetal Patel</a></div>
+            <div class="flex items-center px-4 gap-4">
                 <a href="https://www.instagram.com/j2keys/?hl=en" target='blank'>
                     <div class="social-button">
                         <button class="relative w-12 h-12 rounded-full group">
                             <div
-                                class="floater w-full h-full absolute top-0 left-0 bg-violet-400 rounded-full duration-300 group-hover:-top-8 group-hover:shadow-2xl"
+                                class="floater w-full h-full absolute top-0 left-0 bg-zinc-700 rounded-full duration-300 group-hover:-top-8 group-hover:shadow-2xl"
                             ></div>
                             <div
-                                class="icon relative z-10 w-full h-full flex items-center justify-center border-2 border-violet-400 rounded-full"
+                                class="icon relative z-10 w-full h-full flex items-center justify-center border-2 border-zinc-700 rounded-full"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -38,10 +40,10 @@ function Footer() {
                     <div class="social-button">
                         <button class="relative w-12 h-12 rounded-full group">
                             <div
-                                class="floater w-full h-full absolute top-0 left-0 bg-black rounded-full duration-300 group-hover:-top-8 group-hover:shadow-2xl"
+                                class="floater w-full h-full absolute top-0 left-0 bg-zinc-700 rounded-full duration-300 group-hover:-top-8 group-hover:shadow-2xl"
                             ></div>
                             <div
-                                class="icon relative z-10 w-full h-full flex items-center justify-center border-2 border-black rounded-full"
+                                class="icon relative z-10 w-full h-full flex items-center justify-center border-2 border-zinc-700 rounded-full"
                             >
                                 <svg
                                     height="24"
@@ -64,10 +66,10 @@ function Footer() {
                     <div class="social-button">
                         <button class="relative w-12 h-12 rounded-full group">
                             <div
-                                class="floater w-full h-full absolute top-0 left-0 bg-blue-500 rounded-full duration-300 group-hover:-top-8 group-hover:shadow-2xl"
+                                class="floater w-full h-full absolute top-0 left-0 bg-zinc-700 rounded-full duration-300 group-hover:-top-8 group-hover:shadow-2xl"
                             ></div>
                             <div
-                                class="icon relative z-10 w-full h-full flex items-center justify-center border-2 border-blue-500 rounded-full"
+                                class="icon relative z-10 w-full h-full flex items-center justify-center border-2 border-zinc-700 rounded-full"
                             >
                                 <svg
                                     height="24"
@@ -89,10 +91,10 @@ function Footer() {
                     <div class="social-button">
                         <button class="relative w-12 h-12 rounded-full group">
                             <div
-                                class="floater w-full h-full absolute top-0 left-0 bg-red-400 rounded-full duration-300 group-hover:-top-8 group-hover:shadow-2xl"
+                                class="floater w-full h-full absolute top-0 left-0 bg-zinc-700 rounded-full duration-300 group-hover:-top-8 group-hover:shadow-2xl"
                             ></div>
                             <div
-                                class="icon relative z-10 w-full h-full flex items-center justify-center border-2 border-red-400 rounded-full"
+                                class="icon relative z-10 w-full h-full flex items-center justify-center border-2 border-zinc-700 rounded-full"
                             >
                                 <svg
                                     height="32"
