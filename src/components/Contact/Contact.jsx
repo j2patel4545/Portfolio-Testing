@@ -56,11 +56,11 @@ function Contact() {
     };
 
     return (
-        <div data-scroll data-scroll-section data-scroll-speed="0.2" className="flex h-screen w-screen bg-black items-center justify-between">
-            <div className="h-[90%] rounded-r-xl bg-zinc-50 w-[25%]">
+        <div data-scroll data-scroll-section data-scroll-speed="0.2" className="flex mx-2 sm:h-screen w-screen bg-black items-center justify-between">
+            <div className="h-[90%] hidden sm:flex  rounded-r-xl bg-zinc-50 w-[25%]">
                 <img src="./contact.png" className="object-cover w-full h-full" alt="" />
             </div>
-            <div className="h-[90%] justify-center mb-3 flex rounded-l-xl bg-[#F7F7F7] w-[73%]">
+            <div className="sm:h-[90%] justify-center mb-3 flex rounded-xl sm:rounded-l-xl bg-[#F7F7F7] sm:w-[73%]">
                 <div className="flex flex-col p-10 rounded-2xl w-full max-w-2xl">
                     <h2 className="text-3xl font-bold mb-4 text-gray-800">We’d love to help</h2>
                     <p className="text-gray-500 mb-8">Reach out and we’ll get in touch within 24 hours.</p>

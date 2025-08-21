@@ -1,18 +1,26 @@
-import React from 'react'
-// import { transform } from 'typescript'
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiMenu, FiX } from "react-icons/fi";
 
 function Navbar() {
-  const services = {
-    name: "Services",
-    link: "#about",
-    classes: "transform translate ease duration-4000"
-};
-  return (
-<div  className='w-[100%] rounded-xl  h-[10vh]  px-10 py-8 font-["NeueMontreal"] flex justify-between items-center bg-[]/30 backdrop-blur-lg'>
+  const [isOpen, setIsOpen] = useState(false);
 
-        <a href="">
-          <div className='logo'>
-            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+  const navLinks = [
+    { name: "About", link: "#about" },
+    { name: "Project's", link: "https://work-portfolio-drab.vercel.app/" },
+    { name: "About us", link: "https://jetal-intro.vercel.app/profile/Profile.html" },
+    { name: "Insights", link: "/insights" },
+    { name: "Contact", link: "/contact" },
+  ];
+
+  return (
+    <div className="w-full rounded-xl h-[10vh] px-10 py-8 font-['NeueMontreal'] flex justify-between items-center bg-black/30 backdrop-blur-lg relative z-50">
+
+      {/* Logo */}
+      <a href="">
+        <div className="logo">
+          {/* --- same svg logo as your code --- */}
+        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="72" height="40"  fill="none" viewBox="0 0 398.000000 131.000000"
  preserveAspectRatio="xMidYMid meet">
 
@@ -50,29 +58,66 @@ l-57 35 0 159 0 159 76 0 c70 0 78 -2 104 -28z"/>
 16 182 59 58 61 60 78 60 500 l0 381 -95 0 -95 0 0 -380z"/>
 </g>
             </svg>
-          </div>
-        </a>
-        <div className='links flex gap-10 services.classes'>
-    {[
-        { name: "About", link: "#about"  },
-        { name: "Project's", link: "https://work-portfolio-drab.vercel.app/" },
-        { name: "About us", link: "https://jetal-intro.vercel.app/profile/Profile.html" },
-        { name: "Insights", link: "/insights" },
-        { name: "Contact", link: "/contact" }
-    ].map((item, index) => (
-        <a
-            key={index}ø
+        </div>
+      </a>
+
+      {/* Desktop links */}
+      <div className="hidden md:flex gap-10">
+        {navLinks.map((item, index) => (
+          <a
+            key={index}
             href={item.link}
             className="text-lg capitalize font-light cursor-pointer"
-            style={{ marginLeft: index === 4 ? '10vw' : '5px' }}
-        >
+            style={{ marginLeft: index === 4 ? "10vw" : "5px" }}
+          >
             {item.name}
-        </a>
-    ))}
-</div>
+          </a>
+        ))}
+      </div>
 
+      {/* Mobile Hamburger */}
+      <div className="md:hidden">
+        <button onClick={() => setIsOpen(true)}>
+          <FiMenu className="text-3xl text-white" />
+        </button>
+      </div>
+
+      {/* Mobile Full Screen Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="fixed top-0 right-0 w-full h-screen bg-black/95 flex flex-col items-center justify-center z-50"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+          >
+            {/* Close Button */}
+            <button
+              className="absolute top-6 right-6 text-4xl text-white"
+              onClick={() => setIsOpen(false)}
+            >
+              <FiX />
+            </button>
+
+            {/* Links */}
+            <div className="flex flex-col gap-8 text-2xl font-light text-white">
+              {navLinks.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.link}
+                  onClick={() => setIsOpen(false)}
+                  className="hover:text-gray-400 transition"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
