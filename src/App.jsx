@@ -1,31 +1,26 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Navbar from './components/navbar';
-import AnimatedCounter from './components/anm'; // Assuming corrected naming
-import Marquee from './components/marquee'; // Assuming corrected naming
-import Landingpage from './components/landingpage';
-import About from './components/about'; // Assuming corrected naming
-import Eye from './components/eye';
-import Skills from './components/skils'; // Corrected naming
-import Projects from './components/projets'; // Corrected naming
+import Navbar from './components/layout/Navbar';
+import AnimatedCounter from './components/ui/AnimatedCounter';
+import Marquee from './components/ui/Marquee';
+import Landingpage from './components/sections/LandingPage';
+import About from './components/sections/About';
+import Eye from './components/ui/Eye';
+import Skills from './components/sections/Skills';
+import Projects from './components/sections/Projects';
 import LocomotiveScroll from 'locomotive-scroll';
 import Headroom from 'react-headroom';
-// import Contect from './components/Contect';
-import Contact from './components/Contact/Contact';
-import Footer from './components/Footer'
+// import Contect from './components/sections/Contact/Contect';
+import Contact from './components/sections/Contact/Contact';
+import Footer from './components/layout/Footer';
 
 function App() {
-  const scrollRef = useRef(null);
   const [counterFinished, setCounterFinished] = useState(false);
 
   useEffect(() => {
-    const scrollInstance = new LocomotiveScroll({
-      el: scrollRef.current,
-      smooth: true,
-      getDirection: true,
-    });
-
+    const locomotiveScroll = new LocomotiveScroll();
+    
     return () => {
-      scrollInstance.destroy();
+      locomotiveScroll.destroy();
     };
   }, []);
 
@@ -34,7 +29,8 @@ function App() {
   };
 
   return (
-    <div ref={scrollRef} data-scroll-container className="w-full min-h-screen bg-black text-zinc-50">
+    <div className="w-full min-h-screen bg-[#09090b] text-zinc-50 relative">
+      <div className="bg-noise"></div>
       {/* Loader / Counter */}
       {!counterFinished && <AnimatedCounter onFinish={handleCounterFinish} />}
 

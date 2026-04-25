@@ -14,7 +14,12 @@ function Navbar() {
   ];
 
   return (
-    <div className="w-full rounded-xl h-[10vh] px-10 py-8 font-['NeueMontreal'] flex justify-between items-center bg-black/30 backdrop-blur-lg relative z-50">
+    <motion.div 
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+      className="w-[95%] mx-auto mt-4 rounded-2xl h-[10vh] px-10 py-8 font-['NeueMontreal'] flex justify-between items-center glass relative z-50 shadow-2xl"
+    >
 
       {/* Logo */}
       <a href="">
@@ -116,7 +121,7 @@ l-57 35 0 159 0 159 76 0 c70 0 78 -2 104 -28z"/>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 }
 

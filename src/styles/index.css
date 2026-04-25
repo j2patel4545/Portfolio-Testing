@@ -53,10 +53,42 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Add custom styles here if needed */
+@layer utilities {
+  .text-outline {
+    -webkit-text-stroke: 1px #a1a1aa; /* zinc-400 */
+    color: transparent;
+  }
+  .text-outline-hover:hover {
+    -webkit-text-stroke: 1px transparent;
+    color: #f4f4f5; /* zinc-50 */
+    transition: all 0.3s ease;
+  }
+}
+
+/* Noise overlay */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 body {
   font-family: "mango", sans-serif;
+  background-color: #09090b; /* zinc-950 for deeper black */
+  color: #f4f4f5;
 }
+
 /** @type {import('tailwindcss').Config} */
 
 /* global.css */

@@ -1,27 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowUpLong } from 'react-icons/fa6';
-import locomotiveScroll from 'locomotive-scroll';
 
 function LandingPage() {
-  const scrollRef = useRef(null);
-
-  useEffect(() => {
-    const scroll = new locomotiveScroll({
-      el: scrollRef.current,
-      smooth: true,
-    });
-
-    return () => {
-      if (scroll) {
-        scroll.destroy();
-      }
-    };
-  }, []);
-
   return (
     <div
-      ref={scrollRef}
       data-scroll
       data-scroll-section
       data-scroll-speed="-0.5"
@@ -31,19 +14,24 @@ function LandingPage() {
       <div className="textstructure mt-[10vh] px-5 md:px-20">
         {["Crafting", "Digital", "Experiences"].map((item, index) => (
           <div className="classmaske overflow-hidden" key={index}>
-            <h1 className="flex uppercase leading-[14vw] text-[14vw] sm:leading-[10vw] sm:text-[10vw] md:leading-[7vw] md:text-[7.5vw] font-['Founders_Grotesk_X-Condensed'] tracking-tight font-semibold">
+            <motion.h1 
+              initial={{ y: "100%" }}
+              animate={{ y: "0%" }}
+              transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: index * 0.1 }}
+              className="flex uppercase leading-[14vw] text-[14vw] sm:leading-[10vw] sm:text-[10vw] md:leading-[7vw] md:text-[7.5vw] font-['Founders_Grotesk_X-Condensed'] tracking-tight font-semibold"
+            >
               <div className="w-fit flex">
                 {index === 1 && (
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: "20vw" }}
-                    transition={{ ease: [0.76, 0, 0.24, 1], duration: 1 }}
-                    className="w-[20vw] h-[15vw] sm:w-[18vw] sm:h-[12vw] md:w-[13vw] md:h-[8vw] mt-2 rounded-md mr-2 text-black bg-[url('../public/images/back-eye2.jpg')] bg-cover bg-center bg-no-repeat"
+                    transition={{ ease: [0.76, 0, 0.24, 1], duration: 1, delay: 0.5 }}
+                    className="w-[20vw] h-[15vw] sm:w-[18vw] sm:h-[12vw] md:w-[13vw] md:h-[8vw] mt-2 rounded-md mr-2 text-black bg-[url('../public/images/back-eye2.jpg')] bg-cover bg-center bg-no-repeat shadow-xl"
                   ></motion.div>
                 )}
               </div>
               {item}
-            </h1>
+            </motion.h1>
           </div>
         ))}
       </div>

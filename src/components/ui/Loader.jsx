@@ -1,26 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowUpLong } from 'react-icons/fa6';
-import locomotiveScroll from 'locomotive-scroll';
 
 function Loader() {
-  const scrollRef = useRef(null);
-
-  useEffect(() => {
-    const scroll = new locomotiveScroll({
-      el: scrollRef.current,
-      smooth: true,
-    });
-
-    return () => {
-      if (scroll) {
-        scroll.destroy();
-      }
-    };
-  }, []);
-
   return (
-    <div ref={scrollRef} data-scroll data-scroll-section data-scroll-speed="-0.5" className="relative flex-col w-full h-screen pt-1">
+    <div data-scroll data-scroll-section data-scroll-speed="-0.5" className="relative flex-col w-full h-screen pt-1">
       {/* Text Structure */}
       <div className="textstructure mt-[16vh] px-5 md:px-20">
         {["Crafting", "Digital ", "Experiences"].map((item, index) => (

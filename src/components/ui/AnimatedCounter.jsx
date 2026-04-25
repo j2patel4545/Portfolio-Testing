@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import LandingPage from './landingpage';
 import Loader from './Loader';
-import Navbar from './navbar';
+import Navbar from '../layout/Navbar';
 
 const AnimatedCounter = ({ onFinish }) => {
   const [count, setCount] = useState(100);
