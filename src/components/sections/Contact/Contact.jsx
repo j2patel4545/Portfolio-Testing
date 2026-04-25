@@ -56,7 +56,7 @@ function Contact() {
     };
 
     return (
-        <div data-scroll data-scroll-section data-scroll-speed="0.2" className="flex mx-2 sm:h-screen w-full bg-transparent items-center justify-between">
+        <div data-scroll data-scroll-section data-scroll-speed="1.2" className="flex mx-2 sm:h-screen w-full bg-[#09090b] items-center justify-between z-10 relative">
             <div className="h-[90%] hidden sm:flex  rounded-r-xl bg-zinc-50 w-[25%]">
                 <img src="./contact.png" className="object-cover w-full h-full" alt="" />
             </div>

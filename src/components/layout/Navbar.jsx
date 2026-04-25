@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
+import Magnetic from '../ui/Magnetic';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,10 +23,11 @@ function Navbar() {
     >
 
       {/* Logo */}
-      <a href="">
-        <div className="logo">
-          {/* --- same svg logo as your code --- */}
-        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+      <Magnetic>
+        <a href="" data-cursor="HOME">
+          <div className="logo">
+            {/* --- same svg logo as your code --- */}
+          <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="72" height="40"  fill="none" viewBox="0 0 398.000000 131.000000"
  preserveAspectRatio="xMidYMid meet">
 
@@ -63,20 +65,23 @@ l-57 35 0 159 0 159 76 0 c70 0 78 -2 104 -28z"/>
 16 182 59 58 61 60 78 60 500 l0 381 -95 0 -95 0 0 -380z"/>
 </g>
             </svg>
-        </div>
-      </a>
+          </div>
+        </a>
+      </Magnetic>
 
       {/* Desktop links */}
       <div className="hidden md:flex gap-10">
         {navLinks.map((item, index) => (
-          <a
-            key={index}
-            href={item.link}
-            className="text-lg capitalize font-light cursor-pointer"
-            style={{ marginLeft: index === 4 ? "10vw" : "5px" }}
-          >
-            {item.name}
-          </a>
+          <Magnetic key={index}>
+            <a
+              data-cursor={item.name.toUpperCase()}
+              href={item.link}
+              className="text-lg capitalize font-light cursor-pointer transition hover:text-zinc-400"
+              style={{ marginLeft: index === 4 ? "10vw" : "5px" }}
+            >
+              {item.name}
+            </a>
+          </Magnetic>
         ))}
       </div>
 

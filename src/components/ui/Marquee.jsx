@@ -3,7 +3,12 @@ import React from 'react'
 
 function marquee() {
   return (
-    <div className='w-full  py-10  h-[61vh] relative  bg-[#27272A] rounded-tl-3xl rounded-tr-3xl'>
+    <div 
+      data-scroll 
+      data-scroll-section 
+      data-scroll-speed="1.5" 
+      className='w-full py-10 h-[61vh] relative bg-[#27272A] rounded-tl-3xl rounded-tr-3xl z-10 shadow-[0_-10px_30px_rgba(0,0,0,0.3)]'
+    >
       <div className="text-zinc-50 border-t border-b border-zinc-800 flex whitespace-nowrap overflow-hidden py-4">
         <motion.h1 
         initial={{ x: 0 }} 

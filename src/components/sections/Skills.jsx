@@ -12,13 +12,13 @@ import {
 
 function Skills() {
   return (
-    <div className='flex-col relative font-["Founders_Grotesk_X-Condensed"] w-full justify-center px-4'>
+    <div data-scroll data-scroll-section data-scroll-speed="1.1" className='flex-col relative font-["Founders_Grotesk_X-Condensed"] w-full justify-center px-4 z-10 bg-[#09090b] py-10'>
       
       {/* Title */}
-      <div className='flex justify-center mt-10 text-3xl md:text-4xl font-bold text-zinc-900'>
+      <div className='flex justify-center mt-10 text-3xl md:text-4xl font-bold text-zinc-50'>
         My Skills
       </div>
-      <div className='flex justify-center mb-10 text-lg md:text-2xl font-light text-zinc-600'>
+      <div className='flex justify-center mb-10 text-lg md:text-2xl font-light text-zinc-500'>
         -- What I Know --
       </div>
 

@@ -12,6 +12,7 @@ import Headroom from 'react-headroom';
 // import Contect from './components/sections/Contact/Contect';
 import Contact from './components/sections/Contact/Contact';
 import Footer from './components/layout/Footer';
+import CustomCursor from './components/ui/CustomCursor';
 
 function App() {
   const [counterFinished, setCounterFinished] = useState(false);
@@ -30,26 +31,37 @@ function App() {
 
   return (
     <div className="w-full min-h-screen bg-[#09090b] text-zinc-50 relative">
+      <CustomCursor />
       <div className="bg-noise"></div>
       {/* Loader / Counter */}
       {!counterFinished && <AnimatedCounter onFinish={handleCounterFinish} />}
 
       {/* Actual Website */}
       {counterFinished && (
-        <>
+        <div className="relative">
           <Headroom>
             <Navbar />
           </Headroom>
-          <Landingpage />
-          <Marquee />
-          <About />
-          <Eye />
-          <Projects />
-          <Skills />
-          {/* <Contect/> */}
-          <Contact />
-          <Footer />
-        </>
+
+          {/* Fixed Background Layer */}
+          <div className="fixed top-0 left-0 w-full h-screen z-0 pointer-events-none">
+            <Landingpage />
+          </div>
+
+          {/* Scrolling Foreground Layer */}
+          <div className="relative z-10">
+            {/* Spacer to allow user to see landing page before overlap */}
+            <div className="h-screen w-full bg-transparent pointer-events-none"></div>
+            
+            <Marquee />
+            <About />
+            <Eye />
+            <Projects />
+            <Skills />
+            <Contact />
+            <Footer />
+          </div>
+        </div>
       )}
     </div>
   );

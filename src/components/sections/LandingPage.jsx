@@ -5,10 +5,7 @@ import { FaArrowUpLong } from 'react-icons/fa6';
 function LandingPage() {
   return (
     <div
-      data-scroll
-      data-scroll-section
-      data-scroll-speed="-0.5"
-      className="relative flex flex-col w-full min-h-screen pt-4"
+      className="w-full h-full flex flex-col pt-4 pointer-events-auto"
     >
       {/* Text Section */}
       <div className="textstructure mt-[10vh] px-5 md:px-20">

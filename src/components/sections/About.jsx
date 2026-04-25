@@ -36,8 +36,8 @@ function About() {
       id="about"
       data-scroll
       data-scroll-section
-      data-scroll-speed="-.1"
-      className="w-full relative flex min-h-screen py-6 sm:py-10 px-4 sm:px-8 rounded-tl-3xl rounded-tr-3xl bg-[#18181B] font-['NeueMontreal'] text-black flex-col"
+      data-scroll-speed="1.5"
+      className="w-full relative flex min-h-screen py-6 sm:py-10 px-4 sm:px-8 rounded-tl-3xl rounded-tr-3xl bg-[#18181B] font-['NeueMontreal'] text-black flex-col z-10"
     >
       {/* Heading */}
       <motion.div 
